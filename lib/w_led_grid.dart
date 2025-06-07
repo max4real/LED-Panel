@@ -27,8 +27,7 @@ class NumberGrid extends StatelessWidget {
     final int totalLEDs = ledCount * 13;
 
     final numberIndices = _getIndicesFromCoordinates(
-      Coordinates().numbersCoordinates[currentNumber] ?? [],
-    );
+        Coordinates().numbersCoordinates[currentNumber] ?? []);
 
     return SizedBox(
       width: 100,
@@ -45,9 +44,8 @@ class NumberGrid extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           itemCount: totalLEDs,
           itemBuilder: (context, index) {
-            final color = numberIndices.contains(index)
-                ? Colors.white
-                : Colors.black;
+            final color =
+                numberIndices.contains(index) ? Colors.white : Colors.black;
             return LEDDot(
               color: color,
               size: ledSize,
